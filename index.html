@@ -6,7 +6,17 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title> The Dark Zone Music Studio</title>
+  <script src="main.js"></script>
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+  </script>
+  <script type="text/javascript">
+    (function(){
+        emailjs.init("7dUASwZaOaUwfcjBQ");
+    })();
+  </script>
 </head>
 
 <body>
@@ -148,23 +158,23 @@
         <h2 class="text-gray-900 text-lg mb-1 font-medium title-font">Contact Us</h2>
         <p class="leading-relaxed mb-5 text-gray-600">For detail enquire please contact us</p>
         <div class="relative mb-4">
-          <form
-            action="https://docs.google.com/forms/d/e/1FAIpQLSewuVX8dCDnWZYzA4tUDrFYXTgFmG7zlQkeFAOapBHvNuXmGw/viewform?usp=sf_link"">
+          <!-- action="https://docs.google.com/forms/d/e/1FAIpQLSewuVX8dCDnWZYzA4tUDrFYXTgFmG7zlQkeFAOapBHvNuXmGw/viewform?usp=sf_link""> -->
+          <form>
 
-            <!-- <label for=" email" class="leading-7 text-sm text-gray-600">Email</label>
-            <input type="email" id="email" name="email"
+            <label for=" email" class="leading-7 text-sm text-gray-600">Name</label>
+            <input type="email" id="name" name="name"
               class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
 
-            <label for="phoneNumber" class="leading-7 text-sm text-gray-600">Phone number</label>
-            <input type="number" id="phoneNumber" name="email"
+            <!-- <label for="phoneNumber" class="leading-7 text-sm text-gray-600">Phone number</label>
+            <input type="number" id="phoneNumber" name="phoneNumber"
               class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"> -->
         </div>
-        <!-- <div class="relative mb-4">
+        <div class="relative mb-4">
           <label for="message" class="leading-7 text-sm text-gray-600">Message</label>
-          <textarea id="message" name="message" placeholder="This is not working Click on Submit button to contact us"
+          <textarea id="message" name="message" placeholder="Please enter Your Phone Number with your message!"
             class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
-        </div> -->
-        <input type="submit" value="Contact"
+        </div>
+        <input type="submit" value="Contact" onclick="sendMail()"
           class="text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg"
           id="submitbtn" />
         <p class="text-xs text-gray-500 mt-3">Write your work related quires in the message box! After you click the Contact button.</p>
@@ -221,28 +231,6 @@
     </div>
     <span style="display: flex; justify-content: center; align-items: center;">Made with <span style="color: red; font-size: 25px;">&hearts;</span> by Hemant</span>
   </footer>
-
-  <script src="https://smtpjs.com/v3/smtp.js"></script>
-  <script>
-    function sendMail() {
-      Email.send({
-        Host: "smtp.elasticemail.com",
-        Username: "myzedstore@gmail.com",
-        Password: "ozomzhamkvmxesgt",
-        To: 'myzedstore@gmail.com',
-        From: document.getElementById("email").value,
-        Subject: "This is the subject",
-        Body: "And this is the body"
-      }).then(
-        message => alert(message)
-      );
-    }
-
-    function theme() {
-      var element = document.body;
-      element.classList.toggle("dark-mode");
-    }
-  </script>
 
 </body>
 
